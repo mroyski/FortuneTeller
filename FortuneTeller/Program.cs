@@ -30,7 +30,30 @@ namespace FortuneTeller
                 retirement = "20 years";
             }
 
-            Console.WriteLine("What month were you born?");
+
+            // BANK BALANCE
+            string bankBalance;
+            string birthMonth;
+            Console.WriteLine("What is the number of your birth month?");
+            birthMonth = Console.ReadLine();
+            int monthNumber = Convert.ToInt32(birthMonth);
+
+
+            if (monthNumber <= 4)
+            {
+                bankBalance = "$45";
+            } else if (monthNumber <= 8 && monthNumber > 4)
+            {
+                bankBalance = "$10,000";
+            } else if (monthNumber > 8)
+            {
+                bankBalance = "$75,000";
+            } else bankBalance = "$3.50";
+
+
+
+
+
 
             // MODE OF TRANSPORTATION
             string transportation;
@@ -87,9 +110,6 @@ namespace FortuneTeller
         
 
 
-
-
-
                 // VACATION HOME LOCATION
                 Console.WriteLine("How many siblings do you have?");
 
@@ -121,6 +141,9 @@ namespace FortuneTeller
                 {
                     vacationHome = "Cleveland";
                 }
+            Console.WriteLine("Are you ready to hear your fortune?");
+            Console.ReadLine();
+
 
             }
         }
