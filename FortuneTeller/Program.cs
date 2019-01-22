@@ -57,92 +57,96 @@ namespace FortuneTeller
 
             // MODE OF TRANSPORTATION
             string transportation;
-            bool colorChoice = false;
+            bool answer = false;
             string color;
             do
             {
+
                 Console.WriteLine("What is your favorite color? (ROYGBIV)");
                 Console.WriteLine("enter \"HELP\" for a list of colors.");
                 color = Console.ReadLine().ToLower();
 
-                if (color == "help")
+
+                if (color.Equals("help"))
                 {
                     Console.WriteLine("==== COLORS ====");
                     Console.WriteLine("RED, ORANGE, YELLOW, GREEN, BLUE, INDIGO, VIOLET");
+                    answer = false;
                 }
-                else if (color == "red")
+                else
                 {
-                    transportation = "Lamborghini";
-                    colorChoice = true;
+                    answer = true;
                 }
-                else if (color == "orange")
-                {
-                    transportation = "Prius";
-                    colorChoice = true;
+            } while (answer == false);
 
-                }
-                else if (color == "yellow")
-                {
-                    transportation = "Corvette";
-                    colorChoice = true;
-                }
-                else if (color == "green")
-                {
-                    transportation = "Jeep";
-                    colorChoice = true;
-                }
-                else if (color == "blue")
-                {
-                    transportation = "scooter";
-                    colorChoice = true;
-                }
-                else if (color == "indigo")
-                {
-                    transportation = "lawn mower";
-                    colorChoice = true;
-                }
-                else if (color == "violet")
-                {
-                    transportation = "school bus";
-                    colorChoice = true;
-                }
-            } while (colorChoice == false);
+
+            if (color == "red")
+            {
+                transportation = "Lamborghini";
+            }
+            else if (color == "orange")
+            {
+                transportation = "Prius";
+            }
+            else if (color == "yellow")
+            {
+                transportation = "Corvette";
+            }
+            else if (color == "green")
+            {
+                transportation = "Jeep";
+            }
+            else if (color == "blue")
+            {
+                transportation = "scooter";
+            }
+            else if (color == "indigo")
+            {
+                transportation = "lawn mower";
+            }
+            else if (color == "violet")
+            {
+                transportation = "school bus";
+            }
+            else transportation = "space ship";
+            
+        
         
 
 
                 // VACATION HOME LOCATION
-                Console.WriteLine("How many siblings do you have?");
+            Console.WriteLine("How many siblings do you have?");
 
-                string siblings = Console.ReadLine();
-                int siblingCount = Convert.ToInt32(siblings);
-                string vacationHome;
+            string siblings = Console.ReadLine();
+            int siblingCount = Convert.ToInt32(siblings);
+            string vacationHome;
 
-                if (siblingCount == 0)
-                {
-                    vacationHome = "Rockport";
-                }
-                else if (siblingCount == 1)
-                {
-                    vacationHome = "Italy";
-                }
-                else if (siblingCount == 2)
-                {
-                    vacationHome = "Los Angeles";
-                }
-                else if (siblingCount == 3)
-                {
-                    vacationHome = "Hawaii";
-                }
-                else if (siblingCount > 3)
-                {
-                    vacationHome = "Toronto";
-                }
-                else if (siblingCount < 0)
-                {
-                    vacationHome = "Cleveland";
-                }
-            Console.WriteLine("Are you ready to hear your fortune?");
-            Console.ReadLine();
+            if (siblingCount == 0)
+            {
+                vacationHome = "Rockport";
+            }
+            else if (siblingCount == 1)
+            {
+                vacationHome = "Italy";
+            }
+            else if (siblingCount == 2)
+            {
+                vacationHome = "Los Angeles";
+            }
+            else if (siblingCount == 3)
+            {
+                vacationHome = "Hawaii";
+            }
+            else if (siblingCount > 3)
+            {
+                vacationHome = "Toronto";
+            }
+            else vacationHome = "Cleveland";
+                        Console.WriteLine("Are you ready to hear your fortune?");
+            Console.ReadKey();
+
+            // FORTUNE
+            Console.WriteLine(firstName + " " + lastName + " wil retire in " + retirement + " with " + bankBalance + " in the bank, and a vacation home in " + vacationHome + ", and travel by " + transportation + ".");
 
 
             }
